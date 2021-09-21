@@ -10,25 +10,26 @@ import "./App.css";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
+  hidePostalCode: true,
   style: {
     base: {
       iconColor: "#c4f0ff",
-      color: "#fff",
+      color: "black",
       fontWeight: 500,
       fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
       fontSize: "16px",
       fontSmoothing: "antialiased",
       ":-webkit-autofill": {
-        color: "#fce883"
+        color: "black"
       },
       "::placeholder": {
-        color: "#87bbfd"
+        color: "black"
       }
     },
     invalid: {
       iconColor: "#ffc7ee",
-      color: "#ffc7ee"
-    }
+      color: "black"
+    },
   }
 };
 
@@ -174,10 +175,10 @@ const CheckoutForm = () => {
     <form className="Form" onSubmit={handleSubmit}>
       <fieldset className="FormGroup">
         <Field
-          label="Name"
+          // label="Name"
           id="name"
           type="text"
-          placeholder="Jane Doe"
+          placeholder="Name"
           required
           autoComplete="name"
           value={billingDetails.name}
@@ -186,22 +187,22 @@ const CheckoutForm = () => {
           }}
         />
         <Field
-          label="Email"
+          // label="Email"
           id="email"
           type="email"
-          placeholder="janedoe@gmail.com"
+          placeholder="email"
           required
-          autoComplete="email"
+          autoComplete="Email"
           value={billingDetails.email}
           onChange={(e) => {
             setBillingDetails({ ...billingDetails, email: e.target.value });
           }}
         />
         <Field
-          label="Phone"
+          // label="Phone"
           id="phone"
           type="tel"
-          placeholder="(941) 555-0123"
+          placeholder="Phone number"
           required
           autoComplete="tel"
           value={billingDetails.phone}
